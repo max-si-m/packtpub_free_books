@@ -1,5 +1,5 @@
 .input-group.form-lg role="search"
   = form_tag(books_path, method: "get", role: "form", id:'search_form', enforce_utf8: false) do |f|
-    = text_field_tag :q, params[:q], class: 'form-control', placeholder: "Some text", required: true
+    = text_field_tag :q, params[:q], class: 'form-control', placeholder: "Some text"
   span.input-group-btn
     = submit_tag "Search", class: "btn btn-primary search_button"

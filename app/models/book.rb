@@ -5,6 +5,10 @@ class Book < ActiveRecord::Base
   validates :title, :url, presence: true, uniqueness: true
   validates :slug, uniqueness: true
 
+  def self.search(title)
+    where('title ILIKE :title OR description ILIKE :title', title: "%#{title}%")
+  end
+
   private
     def uid
       SecureRandom.hex 2
