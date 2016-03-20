@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
   def index
-    @books = Book.search(params[:q]).page(params[:page]).order_by(id: :desc)
+    @books = Book.search(params[:q]).page(params[:page]).order(id: :desc)
   end
 
   def show
