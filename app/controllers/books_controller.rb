@@ -6,5 +6,10 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find(params[:id])
+    AddViewToBookService.perform(@book.id)
+  end
+
+  def download
+    AddDownloadToBookService.perform(params[:id]) if params[:id]
   end
 end

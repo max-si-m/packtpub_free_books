@@ -1,0 +1,23 @@
+- meta title: @book.title
+.space
+section.section
+  .container
+    .col-lg-9
+      h1= @book.title
+      hr
+      .row
+        p.col-lg-6
+          b Views: &nbsp;
+          = @book.views
+        p.col-lg-6
+          b Downloads: &nbsp;
+          = @book.downloads
+      hr
+      p.description
+        = @book.description
+      hr
+      .tags
+        ul.list-unstyled
+          = urls(@book)
+    .col-lg-3
+      = image_tag @book.image

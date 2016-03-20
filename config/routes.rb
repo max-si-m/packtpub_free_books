@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :books, only: [:index, :show]
+  resources :books, only: [:index, :show] do
+    post 'download'
+  end
 
   root 'books#index'
   # The priority is based upon order of creation: first created -> highest priority.

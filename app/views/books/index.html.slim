@@ -33,10 +33,10 @@ section.section
                     | Downloads
               = image_tag book.image, class: 'img-responsive'
           .col-sm-6
-            = link_to book, target: "_blank" do
+            = link_to book do
               h2= book.title
             p
               = book.description
-            = link_to book, class: 'btn btn-default-trn-v2', title: "Download #{book.title} e-book", target: "_blank" do
+            = link_to book, class: 'btn btn-default-trn-v2', title: "Download #{book.title} e-book" do
               i.fa.fa-angle-right
               | Go to download
