@@ -4,3 +4,10 @@
 require File.expand_path('../config/application', __FILE__)
 
 Rails.application.load_tasks
+
+namespace :parsers do
+  desc "get new book for packtub site"
+  task :add_new_book => :environment do
+    ParseBookService.perform
+  end
+end
