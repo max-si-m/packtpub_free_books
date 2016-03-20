@@ -40,3 +40,5 @@ section.section
             = link_to book, class: 'btn btn-default-trn-v2', title: "Download #{book.title} e-book" do
               i.fa.fa-angle-right
               | Go to download
+      .row.text-center
+        = paginate @books
