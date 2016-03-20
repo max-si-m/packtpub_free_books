@@ -1,0 +1,42 @@
+.space
+section.bg-12.bg-center.bg-cover
+  .bg-filter
+    .container.section-lg
+      h1.top-title Free books
+
+section.section
+  .container
+    .simple-box
+      = render 'search_form'
+    .col-md-8.col-lg-9
+      - @books.each do |book|
+        .row.blog-post.wow.fadeInUp.animated
+          .col-sm-6
+            .hover-content
+              .part-a.part-c
+                p
+                  .sapce-lg
+                    h3= book.created_at.strftime('%d')
+                    h3= book.created_at.strftime('%B')
+              .part-b
+                ul
+                  li
+                    i.fa.fa-clock-o.fa-fw
+                    = book.created_at.to_formatted_s(:long)
+                  li
+                    i.fa.fa-eye.fa-fw
+                    => book.views
+                    | Views
+                  li
+                    i.fa.fa-cloud-download
+                    => book.downloads
+                    | Downloads
+              = image_tag book.image, class: 'img-responsive'
+          .col-sm-6
+            = link_to book, target: "_blank" do
+              h2= book.title
+            p
+              = book.description
+            = link_to book, class: 'btn btn-default-trn-v2', title: "Download #{book.title} e-book", target: "_blank" do
+              i.fa.fa-angle-right
+              | Go to download
