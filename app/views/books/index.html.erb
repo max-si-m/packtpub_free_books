@@ -18,10 +18,11 @@
     <% @books.each do |book| %>
       <tr>
         <td><%= book.title %></td>
-        <td><%= book.image %></td>
+        <td><%= image_tag book.image %></td>
         <td><%= book.description %></td>
         <td><%= book.views %></td>
         <td><%= book.downloads %></td>
+        <td><%= urls(book.url) %></td>
         <td><%= link_to 'Show', book %></td>
       </tr>
     <% end %>
